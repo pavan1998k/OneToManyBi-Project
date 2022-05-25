@@ -15,8 +15,8 @@ public class TestSaveMobile {
 		EntityTransaction entityTransaction=entityManager.getTransaction();
 		
 		Mobile mobile=new Mobile();
-		mobile.setName("Samsung");
-		mobile.setCost(20000);
+		mobile.setName("Apple iPhone");
+		mobile.setCost(49999);
 		
 		Sim sim1=new Sim();
 		sim1.setProvider("Airtel");
@@ -34,15 +34,12 @@ public class TestSaveMobile {
 		sims.add(sim1);
 		sims.add(sim2);
 		sims.add(sim3);
-		mobile.setSims(sims);
 		
 		sim1.setMobile(mobile);
 		sim2.setMobile(mobile);
 		sim3.setMobile(mobile);
 		
 		entityTransaction.begin();
-		entityManager.persist(sim3);
-		entityManager.persist(sim2);
 		entityManager.persist(mobile);
 		entityTransaction.commit();
 	}
